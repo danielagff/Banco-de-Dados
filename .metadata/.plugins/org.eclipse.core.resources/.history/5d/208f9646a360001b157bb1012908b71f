@@ -1,0 +1,29 @@
+package com.games.loja.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.games.loja.model.Loja;
+import com.games.loja.repository.LojaRepository;
+
+@RestController
+@RequestMapping("/categorias")
+@CrossOrigin("*")
+public class LojaController 
+{
+	@Autowired
+	private LojaRepository repository;
+	
+	@GetMapping	
+	public ResponseEntity<List<Loja>> GetAll()
+	{
+		return ResponseEntity.ok(repository.findAll());
+	}
+	
+}

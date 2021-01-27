@@ -1,0 +1,5 @@
+package com.games.loja.repository;
+
+public interface LojaRepository {
+
+}
